@@ -40,7 +40,7 @@ public class IdentifiersController {
                                              @RequestParam(required = false) String sortBy,
                                               @ApiParam(name = "order", value = "specifies the order", defaultValue = "ASC", allowableValues = "ASC,DESC")
                                              @RequestParam(required = false) String order,
-                                              @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,MIRBASE,NCBI_PROTEIN,EMBL,COMPOUND")
+                                              @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,NCBI_PROTEIN,EMBL,COMPOUND,MAIZEGDB,TAIR,PEANUTBASE_AD,PEANUTBASE_AI,LEGUMEINFO,NCBI,PHYTOZOME_CS,PHYTOZOME_FV,PHYTOZOME_GR,PHYTOZOME_MD,PHYTOZOME_PV,PHYTOZOME_EG,PHYTOZOME_ME,PHYTOZOME_MG,KDRI_JC,CONGENIE,JAISWAL,MICROBEDB") // JP - added add'l ref dbs
                                              @RequestParam(required = false, defaultValue = "TOTAL") String resource) {
         UserData ud = controller.getUserData(input);
         return controller.analyse(ud, true, interactors).getResultSummary(sortBy, order, resource, pageSize, page);
@@ -65,7 +65,7 @@ public class IdentifiersController {
                                       @RequestParam(required = false) String sortBy,
                                        @ApiParam(name = "order", value = "specifies the order", defaultValue = "ASC", allowableValues = "ASC,DESC")
                                       @RequestParam(required = false) String order,
-                                       @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,MIRBASE,NCBI_PROTEIN,EMBL,COMPOUND")
+                                       @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,NCBI_PROTEIN,EMBL,COMPOUND,MAIZEGDB,TAIR,PEANUTBASE_AD,PEANUTBASE_AI,LEGUMEINFO,NCBI,PHYTOZOME_CS,PHYTOZOME_FV,PHYTOZOME_GR,PHYTOZOME_MD,PHYTOZOME_PV,CONGENIE,JAISWAL,MICROBEDB") // JP - added add'l ref dbs
                                       @RequestParam(required = false, defaultValue = "TOTAL") String resource) {
         UserData ud = controller.getUserData(input);
         return controller.analyse(ud, false, interactors).getResultSummary(sortBy, order, resource, pageSize, page);
@@ -94,7 +94,7 @@ public class IdentifiersController {
                                              @RequestParam(required = false) String sortBy,
                                               @ApiParam(name = "order", value = "specifies the order", defaultValue = "ASC", allowableValues = "ASC,DESC")
                                              @RequestParam(required = false) String order,
-                                              @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,MIRBASE,NCBI_PROTEIN,EMBL,COMPOUND")
+                                              @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,NCBI_PROTEIN,EMBL,COMPOUND")
                                              @RequestParam(required = false, defaultValue = "TOTAL") String resource) {
         UserData ud = controller.getUserData(file);
         return controller.analyse(ud, true, interactors, file.getOriginalFilename()).getResultSummary(sortBy, order, resource, pageSize, page);
@@ -122,7 +122,7 @@ public class IdentifiersController {
                                       @RequestParam(required = false) String sortBy,
                                        @ApiParam(name = "order", value = "specifies the order", defaultValue = "ASC", allowableValues = "ASC,DESC")
                                       @RequestParam(required = false) String order,
-                                       @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,MIRBASE,NCBI_PROTEIN,EMBL,COMPOUND")
+                                       @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,NCBI_PROTEIN,EMBL,COMPOUND")
                                       @RequestParam(required = false, defaultValue = "TOTAL") String resource) {
         UserData ud = controller.getUserData(file);
         return controller.analyse(ud, false, interactors, file.getOriginalFilename()).getResultSummary(sortBy, order, resource, pageSize, page);
@@ -152,7 +152,7 @@ public class IdentifiersController {
                                             @RequestParam(required = false) String sortBy,
                                              @ApiParam(name = "order", value = "specifies the order", defaultValue = "ASC", allowableValues = "ASC,DESC")
                                             @RequestParam(required = false) String order,
-                                             @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,MIRBASE,NCBI_PROTEIN,EMBL,COMPOUND")
+                                             @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,NCBI_PROTEIN,EMBL,COMPOUND")
                                             @RequestParam(required = false, defaultValue = "TOTAL") String resource) {
         UserData ud = controller.getUserDataFromURL(url);
         String fileName = controller.getFileNameFromURL(url);
@@ -182,7 +182,7 @@ public class IdentifiersController {
                                      @RequestParam(required = false) String sortBy,
                                       @ApiParam(name = "order", value = "specifies the order", defaultValue = "ASC", allowableValues = "ASC,DESC")
                                      @RequestParam(required = false) String order,
-                                      @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,MIRBASE,NCBI_PROTEIN,EMBL,COMPOUND")
+                                      @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,NCBI_PROTEIN,EMBL,COMPOUND")
                                      @RequestParam(required = false, defaultValue = "TOTAL") String resource) {
         UserData ud = controller.getUserDataFromURL(url);
         String fileName = controller.getFileNameFromURL(url);

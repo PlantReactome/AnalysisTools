@@ -46,7 +46,7 @@ public class TokenController {
                                   @RequestParam(required = false) String sortBy,
                                     @ApiParam(name = "order", value = "specifies the order", defaultValue = "ASC", allowableValues = "ASC,DESC")
                                   @RequestParam(required = false) String order,
-                                    @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,MIRBASE,NCBI_PROTEIN,EMBL,COMPOUND")
+                                    @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,NCBI_PROTEIN,EMBL,COMPOUND,MAIZEGDB,TAIR,PEANUTBASE_AD,PEANUTBASE_AI,LEGUMEINFO,NCBI,PHYTOZOME_CS,PHYTOZOME_FV,PHYTOZOME_GR,PHYTOZOME_MD,PHYTOZOME_PV,PHYTOZOME_EG,PHYTOZOME_ME,PHYTOZOME_MG,KDRI_JC,CONGENIE,JAISWAL,MICROBEDB") // JP - added add'l ref dbs
                                   @RequestParam(required = false, defaultValue = "TOTAL") String resource) {
         return controller.getFromToken(token).getResultSummary(sortBy, order, resource, pageSize, page);
     }
@@ -63,7 +63,7 @@ public class TokenController {
                                                 @PathVariable String token,
                                                  @ApiParam(name = "input", required = true, value = "A comma separated list with the identifiers of the pathways of interest (NOTE: is plain text, not json)")
                                                 @RequestBody String input,
-                                                 @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,MIRBASE,NCBI_PROTEIN,EMBL,COMPOUND")
+                                                 @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,NCBI_PROTEIN,EMBL,COMPOUND")
                                                 @RequestParam(required = false, defaultValue = "TOTAL") String resource) {
         List<Long> pathwayIds = controller.getInputIds(input);
         return controller.getFromToken(token).filterByPathways(pathwayIds, resource);
@@ -79,7 +79,7 @@ public class TokenController {
                                           @PathVariable String token,
                                            @ApiParam(name = "species", required = true, value = "The dbId of the species to filter the result")
                                           @PathVariable Long species,
-                                           @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,MIRBASE,NCBI_PROTEIN,EMBL,COMPOUND")
+                                           @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,NCBI_PROTEIN,EMBL,COMPOUND")
                                           @RequestParam(required = false, defaultValue = "TOTAL") String resource) {
         return controller.getFromToken(token).filterBySpecies(species, resource);
     }
@@ -103,7 +103,7 @@ public class TokenController {
                                 @RequestParam(required = false) String sortBy,
                                  @ApiParam(name = "order", value = "specifies the order", defaultValue = "ASC", allowableValues = "ASC,DESC")
                                 @RequestParam(required = false) String order,
-                                 @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,MIRBASE,NCBI_PROTEIN,EMBL,COMPOUND")
+                                 @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,NCBI_PROTEIN,EMBL,COMPOUND")
                                  @RequestParam(required = false, defaultValue = "TOTAL") String resource) {
         return controller.getFromToken(token).getPage(pathway, sortBy, order, resource, pageSize);
     }
@@ -120,7 +120,7 @@ public class TokenController {
                                                   @PathVariable String token,
                                                     @ApiParam(name = "pathway", required = true, value = "The dbId of the pathway of interest")
                                                   @PathVariable Long pathway,
-                                                    @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,MIRBASE,NCBI_PROTEIN,EMBL,COMPOUND")
+                                                    @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,NCBI_PROTEIN,EMBL,COMPOUND")
                                                   @RequestParam(required = false, defaultValue = "TOTAL") String resource) {
         AnalysisStoredResult result = controller.getFromToken(token);
         PathwayNodeSummary aux = result.getPathway(pathway);
@@ -151,7 +151,7 @@ public class TokenController {
                                                          @RequestParam(required = false) Integer page,
                                                     @ApiParam(name = "pageSize", value = "identifiers per page", defaultValue = "20")
                                                          @RequestParam(required = false) Integer pageSize,
-                                                    @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,MIRBASE,NCBI_PROTEIN,EMBL,COMPOUND")
+                                                    @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,NCBI_PROTEIN,EMBL,COMPOUND")
                                                          @RequestParam(required = false, defaultValue = "TOTAL") String resource) {
         AnalysisStoredResult result = controller.getFromToken(token);
         PathwayNodeSummary aux = result.getPathway(pathway);
@@ -193,7 +193,7 @@ public class TokenController {
                                                          @RequestParam(required = false) Integer page,
                                                        @ApiParam(name = "pageSize", value = "identifiers per page", defaultValue = "20")
                                                          @RequestParam(required = false) Integer pageSize,
-                                                       @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,MIRBASE,NCBI_PROTEIN,EMBL,COMPOUND")
+                                                       @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,NCBI_PROTEIN,EMBL,COMPOUND")
                                                          @RequestParam(required = false, defaultValue = "TOTAL") String resource) {
         AnalysisStoredResult result = controller.getFromToken(token);
         PathwayNodeSummary aux = result.getPathway(pathway);
@@ -256,7 +256,7 @@ public class TokenController {
                                              @PathVariable String token,
                                               @ApiParam(name = "pathway", required = true, value = "The database identifier of the pathway of interest")
                                              @PathVariable Long pathway,
-                                              @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,MIRBASE,NCBI_PROTEIN,EMBL,COMPOUND")
+                                              @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,NCBI_PROTEIN,EMBL,COMPOUND")
                                              @RequestParam(required = false, defaultValue = "TOTAL") String resource) {
         return controller.getFromToken(token).getFoundReactions(pathway, resource);
     }
@@ -273,7 +273,7 @@ public class TokenController {
                                              @PathVariable String token,
                                               @ApiParam(name = "input", required = true, value = "A comma separated list with the identifiers of the pathways of interest (NOTE: is plain text, not json)")
                                              @RequestBody String input,
-                                              @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,MIRBASE,NCBI_PROTEIN,EMBL,COMPOUND")
+                                              @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,NCBI_PROTEIN,EMBL,COMPOUND")
                                              @RequestParam(required = false, defaultValue = "TOTAL") String resource) {
         List<Long> pathwayIds = controller.getInputIds(input);
         return controller.getFromToken(token).getFoundReactions(pathwayIds, resource);

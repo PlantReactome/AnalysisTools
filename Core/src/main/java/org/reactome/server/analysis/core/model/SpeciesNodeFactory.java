@@ -11,9 +11,9 @@ import java.util.Map;
  */
 public abstract class SpeciesNodeFactory {
 
-    public static long HUMAN_DB_ID = 48887L;
-    public static String HUMAN_TAX_ID = "9606";
-    public static String HUMAN_STR = "Homo sapiens";
+    public static long HUMAN_DB_ID = 186860L;
+    public static String HUMAN_TAX_ID = "4530";
+    public static String HUMAN_STR = "Oryza sativa";
 
     private static Map<Long, SpeciesNode> speciesMap = new HashMap<Long, SpeciesNode>();
 

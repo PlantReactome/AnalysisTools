@@ -21,7 +21,7 @@ public class SpeciesController {
                           "preferred option. The resource field will filter the results to show only those corresponding to the preferred " +
                           "molecule type (TOTAL includes all the different molecules type)")
     @ApiResponses({@ApiResponse( code = 404, message = "Species identifier does not match with any of the species in the current data" )})
-    @RequestMapping(value = "/homoSapiens/{species}", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/oryzaSativa/{species}", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
     public AnalysisResult compareHomoSapiensTo( @ApiParam(name = "species", required = true, value = "The dbId of the species to compare to")
                                               @PathVariable Long species,
@@ -33,7 +33,7 @@ public class SpeciesController {
                                               @RequestParam(required = false) String sortBy,
                                                @ApiParam(name = "order", value = "specifies the order", defaultValue = "ASC", allowableValues = "ASC,DESC")
                                               @RequestParam(required = false) String order,
-                                               @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,MIRBASE,NCBI_PROTEIN,EMBL,COMPOUND")
+                                               @ApiParam(name = "resource", value = "the resource to sort", defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,NCBI_PROTEIN,EMBL,COMPOUND,MAIZEGDB,TAIR,PEANUTBASE_AD,PEANUTBASE_AI,LEGUMEINFO,NCBI,PHYTOZOME_CS,PHYTOZOME_FV,PHYTOZOME_GR,PHYTOZOME_MD,PHYTOZOME_PV,PHYTOZOME_EG,PHYTOZOME_ME,PHYTOZOME_MG,KDRI_JC,CONGENIE,JAISWAL,MICROBEDB") // JP - added add'l ref dbs
                                               @RequestParam(required = false, defaultValue = "TOTAL") String resource) {
         Long from = SpeciesNodeFactory.getHumanNode().getSpeciesID(); //For the time being let's do only human ;)
         return controller.compareSpecies(from, species).getResultSummary(sortBy, order, resource, pageSize, page);

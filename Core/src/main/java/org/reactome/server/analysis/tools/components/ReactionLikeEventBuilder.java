@@ -41,7 +41,7 @@ public class ReactionLikeEventBuilder {
         Collection<?> instances;
         try {
             if (BuilderTool.TEST_HUMAN) {
-                GKInstance hs = dba.fetchInstance(48887L);
+                GKInstance hs = dba.fetchInstance(186860L); // JP-PR
                 instances = dba.fetchInstanceByAttribute(ReactomeJavaConstants.ReactionlikeEvent, ReactomeJavaConstants.species, "=", hs);
             } else {
                 instances = dba.fetchInstancesByClass(ReactomeJavaConstants.ReactionlikeEvent);

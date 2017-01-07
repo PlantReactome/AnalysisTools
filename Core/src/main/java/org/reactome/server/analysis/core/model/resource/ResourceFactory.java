@@ -8,10 +8,13 @@ import java.util.Map;
  */
 public abstract class ResourceFactory {
     //DEFINES the main resources (and those to use as main resources in case the first ones are not found.
-    public enum MAIN { UNIPROT, ENSEMBL, MIRBASE, CHEBI }
+    public enum MAIN { UNIPROT, ENSEMBL, CHEBI }
     //NOTE: The idea is to get rid of the auxMainResources by being in touch with curators and find out whether a
     //main resource identifier can be used in the PhysicalEntities where no main resource was found
-    public enum AUX { NCBI_PROTEIN, EMBL, COMPOUND }
+    public enum AUX { NCBI_PROTEIN, EMBL, COMPOUND, MAIZEGDB, TAIR, PEANUTBASE_AD, PEANUTBASE_AI,
+        LEGUMEINFO, NCBI, PHYTOZOME_CS, PHYTOZOME_FV, PHYTOZOME_GR, PHYTOZOME_MD, PHYTOZOME_PV,
+        PHYTOZOME_EG, PHYTOZOME_ME, PHYTOZOME_MG, KDRI_JC,
+        CONGENIE, JAISWAL, MICROBEDB }
 
     //Some resources use the same identifiers than other resources so in these cases we do not take into account
     //the equivalents. To do so we convert the equivalent ones to the main resource in the 'getResource' method

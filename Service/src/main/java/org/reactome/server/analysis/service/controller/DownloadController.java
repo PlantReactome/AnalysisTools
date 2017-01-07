@@ -34,7 +34,7 @@ public class DownloadController {
     @ResponseBody
     public FileSystemResource downloadHitPathways( @ApiParam(name = "token", required = true, value = "The token associated with the data to download")
                                                   @PathVariable String token,
-                                                   @ApiParam(name = "resource", value = "the preferred resource", required = true, defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,MIRBASE,NCBI_PROTEIN,EMBL,COMPOUND")
+                                                   @ApiParam(name = "resource", value = "the preferred resource", required = true, defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,NCBI_PROTEIN,EMBL,COMPOUND,MAIZEGDB,TAIR,PEANUTBASE_AD,PEANUTBASE_AI,LEGUMEINFO,NCBI,PHYTOZOME_CS,PHYTOZOME_FV,PHYTOZOME_GR,PHYTOZOME_MD,PHYTOZOME_PV,PHYTOZOME_EG,PHYTOZOME_ME,PHYTOZOME_MG,KDRI_JC,CONGENIE,JAISWAL,MICROBEDB") // JP - added add'l ref dbs
                                                   @PathVariable String resource,
                                                    @ApiParam(name = "filename", value = "the file name for the downloaded information", required = true, defaultValue = "result")
                                                   @PathVariable String filename) throws IOException {
@@ -51,7 +51,7 @@ public class DownloadController {
     @ResponseBody
     public FileSystemResource downloadMappingResult( @ApiParam(name = "token", required = true, value = "The token associated with the data to download")
                                                     @PathVariable String token,
-                                                     @ApiParam(name = "resource", value = "the preferred resource", required = true, defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,MIRBASE,NCBI_PROTEIN,EMBL,COMPOUND")
+                                                     @ApiParam(name = "resource", value = "the preferred resource", required = true, defaultValue = "TOTAL", allowableValues = "TOTAL,UNIPROT,ENSEMBL,CHEBI,NCBI_PROTEIN,EMBL,COMPOUND")
                                                     @PathVariable String resource,
                                                      @ApiParam(name = "filename", value = "the file name for the downloaded information", required = true, defaultValue = "result")
                                                     @PathVariable String filename) throws IOException {

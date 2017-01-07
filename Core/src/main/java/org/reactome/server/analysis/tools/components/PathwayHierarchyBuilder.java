@@ -42,8 +42,10 @@ public class PathwayHierarchyBuilder {
         int i = 0; int tot = speciess.size();
         for (Species species : speciess) {
             //FOR TEST PURPOSES
-            if(BuilderTool.TEST_HUMAN && !species.getDbId().equals(48887L)) break;
-
+            if(BuilderTool.TEST_HUMAN && !species.getDbId().equals(186860L)) break; // JP-PR
+            if(species == null) continue; // JP-PR
+            if(species.getDbId().equals(48887L)) continue; // ignore H.sapiens, JP-PR
+            if(species.getDbId().equals(68322L)) continue; // ignore S.cerevisiae, JP-PR
             if(BuilderTool.VERBOSE) {
                 System.out.print("\rCreating the pathway hierarchies >> " + ++i + "/" + tot + " ");
             }
