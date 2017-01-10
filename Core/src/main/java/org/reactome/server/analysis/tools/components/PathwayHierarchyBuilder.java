@@ -180,9 +180,10 @@ public class PathwayHierarchyBuilder {
 
     private void setMainSpecies(){
         this.mainSpecies = new HashSet<Long>();
-        for (Species species : this.helper.getSpeciesList()) {
+        this.mainSpecies.add(186860L); // JP-PR
+        /*for (Species species : this.helper.getSpeciesList()) {
             this.mainSpecies.add(species.getDbId());
-        }
+        }*/
     }
 
     private String getTaxId(MySQLAdaptor dba, Species species){
